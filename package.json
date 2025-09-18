@@ -1,0 +1,32 @@
+{
+  "name": "todo-vanillajs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"node frontend/index.js\"",
+    "server": "nodemon backend/server.js",
+    "build-css": "npx @tailwindcss/cli -i ./frontend/css/input.css -o ./frontend/css/styles.css --watch",
+    "frontend": "node frontend/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run build-css\" \"npm run frontend\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.10",
+    "tailwindcss": "^4.1.13"
+  }
+}

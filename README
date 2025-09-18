@@ -1,0 +1,244 @@
+# Todo App 📝
+
+A full-stack todo application built with Node.js, Express, MongoDB, and Vanilla JavaScript. Features user authentication, priority levels, due dates, and a responsive design.
+
+## ✨ Features
+
+- 🔐 **User Authentication** - Secure registration and login with JWT
+- 📋 **Todo Management** - Create, read, update, and delete todos
+- 🎯 **Priority Levels** - High, Medium, and Low priority classification
+- 📅 **Due Date Tracking** - Set due dates with overdue indicators
+- 🔍 **Filtering & Sorting** - Filter by status and priority
+- 📱 **Responsive Design** - Works seamlessly on desktop and mobile
+- ⚡ **Real-time Updates** - Instant UI feedback
+- 🎨 **Modern UI** - Clean design with Tailwind CSS
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+- HTML5
+- Vanilla JavaScript (ES6+)
+- Tailwind CSS
+
+**Backend:**
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- JWT for authentication
+- bcryptjs for password hashing
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- MongoDB (local installation or MongoDB Atlas)
+- Git
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/sachinksamad1/todo-vanillajs-app.git
+   cd todo-vanillajs-app
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   PORT=5000
+   MONGO_URI=mongodb://localhost:27017/todoapp
+   JWT_SECRET=your_super_secret_jwt_key_here
+   NODE_ENV=development
+   ```
+
+4. **Build Tailwind CSS**
+   ```bash
+   npm run build-css
+   ```
+
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+6. **Open your browser**
+   
+   Navigate to `http://localhost:5000` for API | `http://localhost:3000` for frontend
+
+
+
+## 📁 Project Structure
+
+```
+todo-app/
+├── backend/
+│   ├── server.js              # Express server setup
+│   ├── config/
+│   │   └── db.js              # Database connection
+│   ├── models/
+│   │   ├── User.js            # User model
+│   │   └── Todo.js            # Todo model
+│   ├── routes/
+│   │   ├── authRoutes.js      # Authentication routes
+│   │   └── todoRoutes.js      # Todo CRUD routes
+│   ├── controllers/
+│   │   ├── authController.js  # Auth logic
+│   │   └── todoController.js  # Todo logic
+│   └── middleware/
+│       └── authMiddleware.js  # JWT verification
+├── frontend/
+│   ├── index.js               # Frontend entry point
+│   ├── index.html             # Login/Register page
+│   ├── dashboard.html         # Todo dashboard
+│   ├── js/
+│   │   ├── auth.js            # Authentication handling
+│   │   ├── dashboard.js       # Dashboard functionality
+│   │   └── api.js             # API service layer
+│   └── css/
+│       ├── input.css          # Tailwind source
+│       └── styles.css         # Compiled CSS
+├── package.json
+├── tailwind.config.js
+└── .env
+```
+
+## 🎯 Usage
+
+### Authentication
+1. **Register**: Create a new account with username, email, and password
+2. **Login**: Sign in with your email and password
+3. **Auto-redirect**: Logged-in users are automatically redirected to dashboard
+
+### Todo Management
+1. **Add Todo**: Fill in title, description, priority, and due date
+2. **Edit Todo**: Click "Edit" button to modify existing todos
+3. **Toggle Status**: Check/uncheck to mark todos as complete
+4. **Delete Todo**: Click "Delete" button with confirmation
+5. **Filter**: Use dropdowns to filter by status or priority
+
+### Features in Detail
+- **Priority Levels**: Color-coded badges (Red=High, Yellow=Medium, Green=Low)
+- **Due Dates**: Visual indicators for overdue items
+- **Responsive Design**: Optimized for all screen sizes
+- **Real-time Updates**: Changes reflect immediately without page refresh
+
+## 📜 Available Scripts
+
+```bash
+# Start production server
+npm start
+
+# Start development server with auto-restart
+nodemon run server
+
+# Build and watch Tailwind CSS
+npm run build-css
+
+# Run both server and CSS build in parallel
+npm run dev
+```
+
+## 🔧 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/me` - Get current user info
+
+### Todos (Protected Routes)
+- `GET /api/todos` - Get all user todos
+- `POST /api/todos` - Create new todo
+- `PUT /api/todos/:id` - Update todo
+- `DELETE /api/todos/:id` - Delete todo
+
+## 🎨 Customization
+
+### Styling
+- Modify `tailwind.config.js` for theme customization
+- Update `frontend/css/input.css` for custom styles
+- Rebuild CSS with `npm run build-css`
+
+### Database
+- Change MongoDB connection in `.env`
+- Modify models in `backend/models/` for schema changes
+
+### Features
+- Add new routes in `backend/routes/`
+- Implement controllers in `backend/controllers/`
+- Extend frontend JavaScript in `frontend/js/`
+
+## 🚀 Deployment
+
+### Environment Setup
+1. Set production environment variables
+2. Use MongoDB Atlas for cloud database
+3. Set `NODE_ENV=production` in `.env`
+
+### Platform Options
+- **Heroku**: Easy deployment with git
+- **Vercel**: Great for frontend + serverless functions
+- **DigitalOcean**: Full control with droplets
+- **Railway**: Simple full-stack deployment
+
+### Build for Production
+```bash
+npm install --production
+npm run build-css
+npm start
+```
+
+## 🤝 Contributing
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Commit changes**: `git commit -m 'Add amazing feature'`
+4. **Push to branch**: `git push origin feature/amazing-feature`
+5. **Open a Pull Request**
+
+## 🐛 Issues & Bug Reports
+
+Found a bug? Please open an issue with:
+- Clear description of the problem
+- Steps to reproduce
+- Expected vs actual behavior
+- Screenshots (if applicable)
+- Environment details
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Your Name**
+- GitHub: [@sachinksamad1](https://github.com/sachinksamad1)
+- LinkedIn: [sachinksamad](http://linkedin.com/in/sachin-samad-710292376)
+- Email: sachinksamad1@gmail.com
+
+
+## 🙏 Acknowledgments
+
+- Thanks to the open-source community
+- Inspired by modern todo applications
+- Built with love and lots of coffee ☕
+
+## 📊 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/sachinksamad1/todo-vanillajs-app?style=social)
+![GitHub releases](https://img.shields.io/github/releases/sachinksamad1/todo-app?style=social)
+![GitHub forks](https://img.shields.io/github/forks/sachinksamad1/todo-vanillajs-app?style=social)
+![GitHub issues](https://img.shields.io/github/issues/sachinksamad1/todo-vanillajs-app)
+![GitHub license](https://img.shields.io/github/license//sachinksamad1/todo-vanillajs-app)
+
+---
+
+⭐ **Star this repository if you found it helpful!**
+
+Made with ❤️ by ![SACHIN K SAMAD](https://github.com/sachinksamad1)
